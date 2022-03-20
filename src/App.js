@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Chat from './components/Chat';
 import { Navbar } from './components/Navbar';
-import Footer from './components/Footer';
+
 
 const endpoint = `http://localhost:4000/`;
 const socketIo = socket(endpoint, { transports: ['websocket'] })
