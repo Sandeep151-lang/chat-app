@@ -68,32 +68,34 @@ const Chat = () => {
 
 
     return (
-        <div className='container chats'>
-            <div className='w3-container chat'>
-                <div className='w3-card-4 mt-4'>
-                    <h2 className='my-2' style={{ 'backgroundColor': '#008000b3', 'fontSize': '50px', 'fontFamily': 'Arial,cursive' }}>Chat</h2>
+        <div className=' d-flex justify-content-evenly '>
+            {/* <div>
+                <img className='my-3' src='https://media.istockphoto.com/photos/live-chat-picture-id513300668?b=1&k=20&m=513300668&s=170667a&w=0&h=7Ua_ILJ4AofR3MnUz8ApeilwfJc9V08NtjI6MsPh0vk=' height='50%' width='50%' />
+            </div> */}
 
-                    <hr />
-                    <ScrollToBottom>
-                        <div style={{ 'height': '320px' }}>
+            <div className='w3-card-4 mt-2 mb-5' style={{ 'width': '50%', 'height': '50%', borderRadius: '10px', 'borderColor': 'crimson' }}>
+                <h2 className='my-2 text-center' style={{ 'backgroundColor': "rgb(36, 121, 170)", 'fontSize': '30px', 'fontFamily': 'Arial,cursive', borderRadius: '5px' }}>Chat</h2>
 
-                            {message.map((item, key) => {
+                <ScrollToBottom >
+                    <div style={{ 'height': '320px' }} className='mess'>
 
-                                return <Message key={key} users={item.id === id ? '' : item.user} message={item.message} classes={item.id === id ? `right` : `left`} />
-                            })}
+                        {message.map((item, key) => {
 
-                        </div>
-                    </ScrollToBottom>
-                    <hr />
-                    <div className=" mt-1 d-flex">
-                        <input onKeyPress={(e) => e.key === 'Enter' ? send() : null} type="text" className="form-control" id="message" placeholder="message" name="name" />
-                        <button className='btn btn-success' onClick={send}><i className="fas fa-caret-right" style={{ 'fontSize': '50px' }}></i></button>
+                            return <Message key={key} users={item.id === id ? '' : item.user} message={item.message} classes={item.id === id ? `right` : `left`} />
+                        })}
+
                     </div>
-                    <br />
-                </div>
+                </ScrollToBottom>
 
+                <div className=" mt-1 d-flex">
+                    <input onKeyPress={(e) => e.key === 'Enter' ? send() : null} type="text" className="form-control" id="message" placeholder="message" name="name" />
+                    <button className='btn btn-chat' onClick={send}><i className="fas fa-caret-right" style={{ 'fontSize': '20px' }}></i></button>
+                </div>
+                <br />
             </div>
+
         </div>
+
     )
 }
 
